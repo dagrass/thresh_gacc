@@ -30,7 +30,7 @@ def create_synthetic_data():
             chosen_idx = np.random.choice(idx_9, size=n_rois, replace=True)
         else:
             # At least one 1, rest are 9s
-            n_ones = np.random.randint(1, 5)
+            n_ones = np.random.randint(1, min(5, n_rois))
             n_nines = n_rois - n_ones
             chosen_idx = np.concatenate(
                 [
